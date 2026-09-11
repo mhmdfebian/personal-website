@@ -1,0 +1,1 @@
+export default function CategoriesLoading() { return <div className="h-48 animate-pulse bg-white" aria-label="Loading categories" />; }

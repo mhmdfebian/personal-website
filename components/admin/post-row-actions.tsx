@@ -1,0 +1,6 @@
+"use client";
+
+export function PostRowActions({ id, isPublished, deleteAction, publishAction, unpublishAction, editHref }: { id: number; isPublished: boolean; deleteAction: (formData: FormData) => Promise<void>; publishAction: (formData: FormData) => Promise<void>; unpublishAction: (formData: FormData) => Promise<void>; editHref: string }) {
+  const action = isPublished ? unpublishAction : publishAction;
+  return <div className="flex flex-wrap gap-2 text-xs"><a className="border border-black/20 px-2 py-1" href={editHref}>Edit</a><form action={action}><input name="id" type="hidden" value={id} /><button className="border border-black/20 px-2 py-1" type="submit">{isPublished ? "Unpublish" : "Publish"}</button></form><form action={deleteAction} onSubmit={(event) => { if (!window.confirm("Delete this post permanently?")) event.preventDefault(); }}><input name="id" type="hidden" value={id} /><button className="border border-red-200 px-2 py-1 text-red-700" type="submit">Delete</button></form></div>;
+}

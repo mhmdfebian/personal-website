@@ -1,0 +1,1 @@
+ALTER TABLE "seo_metadata" DROP CONSTRAINT "seo_metadata_global_key_unique";

@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "categories_name_idx" ON "categories" USING btree ("name");

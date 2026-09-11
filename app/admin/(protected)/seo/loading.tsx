@@ -1,0 +1,1 @@
+export default function SeoLoading() { return <div className="h-64 animate-pulse bg-white" aria-label="Loading SEO settings" />; }

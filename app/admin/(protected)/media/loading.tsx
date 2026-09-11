@@ -1,0 +1,1 @@
+export default function MediaLoading() { return <div className="h-64 animate-pulse bg-white" aria-label="Loading media" />; }

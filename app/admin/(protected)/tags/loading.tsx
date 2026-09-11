@@ -1,0 +1,1 @@
+export default function TagsLoading() { return <div className="h-48 animate-pulse bg-white" aria-label="Loading tags" />; }

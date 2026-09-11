@@ -1,0 +1,11 @@
+"use client";
+
+import Image from "next/image";
+import { useActionState } from "react";
+
+import type { MediaActionState } from "@/app/admin/(protected)/media/actions";
+
+export function MediaCard({ item, action, deleteAction }: { item: { id: number; filename: string; originalFilename: string; url: string; width: number; height: number; size: number; alt: string; caption: string; createdAt: Date }; action: (state: MediaActionState, formData: FormData) => Promise<MediaActionState>; deleteAction: (formData: FormData) => Promise<void> }) {
+  const [state, formAction, pending] = useActionState(action, {});
+  return <article className="border border-black/10 bg-white"><div className="relative aspect-[4/3] bg-zinc-100"><Image alt={item.alt} className="object-cover" fill src={item.url} unoptimized /></div><div className="space-y-3 p-4"><p className="truncate text-sm font-medium" title={item.originalFilename}>{item.originalFilename}</p><p className="text-xs text-black/55">{item.width}x{item.height} · {(item.size / 1024).toFixed(0)} KB · {item.createdAt.toLocaleDateString()}</p><form action={formAction} className="space-y-2"><input name="id" type="hidden" value={item.id} /><label className="block text-xs">Alt text<input className="mt-1 w-full border border-black/20 px-2 py-1" defaultValue={item.alt} name="alt" /></label><label className="block text-xs">Caption<input className="mt-1 w-full border border-black/20 px-2 py-1" defaultValue={item.caption} name="caption" /></label><button className="border border-black/20 px-2 py-1 text-xs disabled:opacity-50" disabled={pending} type="submit">Save metadata</button>{state.error ? <p className="text-xs text-red-700">{state.error}</p> : null}{state.success ? <p className="text-xs text-green-700">{state.success}</p> : null}</form><div className="flex gap-2"><button className="copy-media-url border border-black/20 px-2 py-1 text-xs" data-url={item.url} type="button">Copy URL</button><form action={deleteAction} onSubmit={(event) => { if (!window.confirm("Delete this image? It cannot be deleted while referenced.")) event.preventDefault(); }}><input name="id" type="hidden" value={item.id} /><button className="border border-red-200 px-2 py-1 text-xs text-red-700" type="submit">Delete</button></form></div></div></article>;
+}

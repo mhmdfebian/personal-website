@@ -1,0 +1,7 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getCategoryBySlug } from "@/lib/api/categories";
+import { getPublishedPostsByCategory } from "@/lib/api/posts";
+
+export const dynamic = "force-dynamic";
+export default async function BlogCategoryPage({ params }: { params: Promise<{ slug: string }> }) { const slug = (await params).slug; const category = await getCategoryBySlug(slug); if (!category) notFound(); const posts = await getPublishedPostsByCategory(slug, { pageSize: 50 }); return <section className="mx-auto w-full max-w-5xl px-6 py-20"><p className="mb-3 text-sm uppercase tracking-[0.2em] text-black/50">Category</p><h1 className="text-5xl font-semibold tracking-tight">{category.name}</h1><p className="mt-5 max-w-2xl text-lg leading-8 text-black/65">{category.description}</p><div className="mt-12 space-y-6">{posts.map((post) => <article className="border-b border-black/10 pb-6" key={post.id}><p className="text-sm text-black/50">{post.publishedAt?.toLocaleDateString()}</p><h2 className="mt-2 text-2xl font-semibold"><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2><p className="mt-2 text-black/65">{post.excerpt}</p></article>)}{posts.length === 0 ? <p className="text-black/60">No published posts in this category.</p> : null}</div></section>; }

@@ -1,9 +1,38 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# Project Rules
 
-# This is NOT the Next.js you know
+## Tech Stack
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- PostgreSQL
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+## Coding Rules
 
-<!-- END:nextjs-agent-rules -->
+- Use TypeScript
+- Avoid any
+- Use server components by default
+- Use client components only when necessary
+- Use reusable components
+- Do not duplicate code
+- Follow existing project structure
+
+## API
+
+- Keep API calls inside lib/api
+- Validate API responses
+- Handle loading and error states
+
+## UI
+
+- Responsive
+- Mobile first
+- Accessible
+- Use Tailwind CSS
+
+## Important
+
+Before changing architecture:
+- Explain the reason
+- Show the proposed approach
+- Ask for confirmation if the change is significant

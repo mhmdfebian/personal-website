@@ -1,0 +1,5 @@
+import Image from "next/image";
+
+export function SeoPreview({ title, description, url, image }: { title: string; description: string; url: string; image?: string | null }) {
+  return <div className="grid gap-5 md:grid-cols-2"><div className="border border-black/10 bg-white p-5"><p className="mb-4 text-xs uppercase tracking-wide text-black/50">Search preview</p><p className="text-sm text-green-700">{url}</p><h3 className="mt-1 text-xl text-blue-800">{title || "Page title"}</h3><p className="mt-2 text-sm text-black/65">{description || "Page description"}</p></div><div className="overflow-hidden border border-black/10 bg-white"><div className="relative aspect-[1.91/1] bg-zinc-100">{image ? <Image alt="" className="object-cover" fill src={image} unoptimized /> : null}</div><div className="p-5"><p className="mb-2 text-xs uppercase tracking-wide text-black/50">Social preview</p><h3 className="font-semibold">{title || "Social title"}</h3><p className="mt-1 text-sm text-black/65">{description || "Social description"}</p></div></div></div>;
+}

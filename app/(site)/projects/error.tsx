@@ -1,0 +1,10 @@
+"use client";
+
+export default function ProjectsError({ reset }: { reset: () => void }) {
+  return (
+    <section className="mx-auto max-w-6xl px-6 py-20">
+      <h1 className="text-3xl font-semibold">Projects could not be loaded</h1>
+      <button className="mt-5 border border-black/20 px-3 py-2 text-sm" onClick={reset} type="button">Try again</button>
+    </section>
+  );
+}

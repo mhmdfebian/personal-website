@@ -1,0 +1,9 @@
+import Link from "next/link";
+
+import { getAdminMessages } from "@/lib/api/messages";
+import { MessageActions } from "@/components/admin/message-actions";
+
+export default async function AdminMessagesPage() {
+  const messages = await getAdminMessages();
+  return <section><div className="mb-8"><p className="text-sm uppercase tracking-[0.2em] text-black/50">CMS</p><h1 className="mt-2 text-4xl font-semibold">Messages</h1><p className="mt-3 text-black/60">Private contact form submissions.</p></div>{messages.length === 0 ? <div className="border border-dashed border-black/20 px-6 py-12 text-black/60">No messages yet.</div> : <div className="overflow-x-auto border border-black/10 bg-white"><table className="w-full min-w-[900px] text-left text-sm"><thead className="border-b border-black/10 bg-zinc-50 text-xs uppercase text-black/50"><tr><th className="px-4 py-3">Sender</th><th className="px-4 py-3">Email</th><th className="px-4 py-3">Subject</th><th className="px-4 py-3">Status</th><th className="px-4 py-3">Received</th><th className="px-4 py-3"><span className="sr-only">Actions</span></th></tr></thead><tbody className="divide-y divide-black/10">{messages.map((message) => <tr key={message.id}><td className="px-4 py-4 font-medium"><Link className="underline underline-offset-4" href={`/admin/messages/${message.id}`}>{message.name}</Link></td><td className="px-4 py-4 text-black/60">{message.email}</td><td className="px-4 py-4">{message.subject}</td><td className="px-4 py-4">{message.status}</td><td className="px-4 py-4 text-black/60">{message.createdAt.toLocaleString()}</td><td className="px-4 py-4"><MessageActions id={message.id} status={message.status} /></td></tr>)}</tbody></table></div>}</section>;
+}
