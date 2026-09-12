@@ -29,18 +29,24 @@ body {
 }
 
 ::selection {
-  background: #95c4e8;
+  background: #122019;
   color: #122019;
 }
 
-:focus-visible {
+/* :focus-visible {
   outline: 3px solid #95c4e8;
   outline-offset: 3px;
-}
+} */
+/*
 
 .focus-ring:focus-visible {
   outline: 3px solid #95c4e8;
   outline-offset: 3px;
+} */
+
+:focus-visible {
+  outline: 1px solid black;
+  outline-offset: none;
 }
 
 .prose-content {
