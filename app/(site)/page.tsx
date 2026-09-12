@@ -119,7 +119,7 @@ export default async function HomePage() {
               Have a good problem to solve?
             </h2>
           </div>
-          <Link className="mt-8 inline-flex border-b border-black pb-1 font-medium transition-opacity hover:opacity-60" href="/contact">
+          <Link className="self-start mt-8 inline-flex border-b border-black pb-1 font-medium transition-opacity hover:opacity-60" href="/contact">
             Get in touch <span aria-hidden="true">↗</span>
           </Link>
         </div>
