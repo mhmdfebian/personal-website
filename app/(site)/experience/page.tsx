@@ -44,7 +44,7 @@ export default async function ExperiencePage() {
                       <span className="font-normal text-black/55">
                         · {experience.location}
                       </span> : null}{experience.isCurrent ?
-                        <span className="ml-3 border border-black/20 px-2 py-1 text-xs uppercase tracking-wide">
+                        <span className="ml-3 rounded-2xl border border-black/20 px-2 py-1 text-xs uppercase tracking-wide">
                           Current
                         </span> : null}
                 </p>
