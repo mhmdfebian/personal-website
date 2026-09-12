@@ -29,17 +29,17 @@ body {
 }
 
 ::selection {
-  background: #d7e8da;
+  background: #95c4e8;
   color: #122019;
 }
 
 :focus-visible {
-  outline: 3px solid #557b61;
+  outline: 3px solid #95c4e8;
   outline-offset: 3px;
 }
 
 .focus-ring:focus-visible {
-  outline: 3px solid #557b61;
+  outline: 3px solid #95c4e8;
   outline-offset: 3px;
 }
 
