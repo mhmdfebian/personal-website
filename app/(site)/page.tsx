@@ -104,7 +104,7 @@ export default async function HomePage() {
 
       <section className=" px-6 py-20 bg-zinc-100">
         <div className="mx-auto grid w-full max-w-6xl gap-16 md:grid-cols-2">
-          <div><SectionHeading eyebrow="Experience">How I work</SectionHeading><p className="max-w-md leading-8 text-black/65">I work across product, design, and engineering to make complex ideas easier to use and easier to maintain.</p><Link className="mt-6 inline-flex border-b border-black pb-1 font-medium" href="/experience">View experience ↗</Link></div>
+          <div><SectionHeading eyebrow="Experience">How I work</SectionHeading><p className="max-w-md leading-8 text-black/65">I work across product, design, and engineering to make complex ideas easier to use and easier to maintain.</p><Link className="mt-8 inline-flex border-b border-black pb-1 font-medium transition-opacity hover:opacity-60" href="/experience">View experience ↗</Link></div>
           <div className="space-y-6">{experiences.slice(0, 3).map((experience) => <article className="pb-5" key={experience.id}><p className="text-sm text-black/50">{experience.company}</p><h3 className="mt-1 text-xl font-semibold">{experience.role}</h3></article>)}{experiences.length === 0 ? <p className="text-black/60">Experience entries will appear here soon.</p> : null}</div>
         </div>
       </section>
@@ -119,7 +119,7 @@ export default async function HomePage() {
               Have a good problem to solve?
             </h2>
           </div>
-          <Link className="border-b border-black pb-1 text-lg" href="/contact">
+          <Link className="mt-8 inline-flex border-b border-black pb-1 font-medium transition-opacity hover:opacity-60" href="/contact">
             Get in touch <span aria-hidden="true">↗</span>
           </Link>
         </div>
