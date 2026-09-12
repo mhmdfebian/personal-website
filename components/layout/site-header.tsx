@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { SiteNav } from "@/components/layout/site-nav";
+import Image from "next/image";
 
 export function SiteHeader() {
   return (
@@ -9,7 +10,7 @@ export function SiteHeader() {
         
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo-bn.png"
+            src="/bn-logo-transparent.png"
             alt="BN Logo"
             width={50}
             height={40}

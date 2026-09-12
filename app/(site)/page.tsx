@@ -29,16 +29,16 @@ export default async function HomePage() {
         <div className="mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-[1.4fr_0.6fr] md:items-end">
           <div>
             <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-black/60">
-              Designer · Developer · Writer
+              DATA ENGINEER
             </p>
-            <h1 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-tight md:text-8xl">
-              Thoughtful software, built to last.
+            <h1 className="max-w-4xl text-6xl font-semibold leading-[0.95] tracking-tight md:text-8xl">
+              Making data
+              a little less messy.
             </h1>
           </div>
           <div className="max-w-sm text-lg leading-8 text-black/70">
             <p>
-              I&apos;m a product-minded developer focused on clear systems, useful interfaces,
-              and work that holds up beyond the launch.
+              I enjoy building data pipelines, solving problems, and turning raw data into something useful.
             </p>
             <Link
               className="mt-8 inline-flex border-b border-black pb-1 font-medium transition-opacity hover:opacity-60"
